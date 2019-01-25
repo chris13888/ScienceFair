@@ -1,0 +1,32 @@
+<html>
+  <head>
+    <meta charset='UTF-8'>
+    <link rel='stylesheet' href='{{ url_for("static",filename="styles/styles.css") }}'>
+    <script type='text/javascript' src='{{ url_for("static",filename="js/jquery.js") }}'></script>
+    <script type='text/javascript' src='{{ url_for("static",filename="js/script.js") }}'></script>
+  </head>
+  <body>
+    <div id = 'toparea'>
+      <!-- <img src='{{ url_for("static",filename="images/logodark.png") }}' id = 'logo'> -->
+    </div>
+    <div id='bottomarea'>
+      <div id='content' class='in'>
+        <div id='bottom-in'>
+          <form id='eval' action='{{ url_for("evaluate") }}' method = 'POST'>
+              <div id='backdrop'><div id = 'highlighter'></div></div>
+              <textarea id='text' name='it' autocomplete='off' autocorrect='off' autocapitalize='none' spellcheck='false' placeholder='Enter your text here!'></textarea>
+              <div id = 'buttons'>
+                <button type='button' class='button' onclick='copy()'>Copy</button>
+                <input id='find' class='input i' placeholder='find' onkeypress='return noenter(this)'/>
+                <button type='button' class='button' onclick='change_find()'>Find</button>
+                <input id='replace' class='input i' placeholder='replace' onkeypress='return noenter(this)'/>
+                <button type='button' class='button' onclick='change_text()'>Replace</button>
+                <input type='submit' class='button' id='submit' value='Evaluate'>
+              </div>
+          </form>
+        </div>
+        <button id='snack' class='btn' onclick='dismiss()'></button>
+      </div>
+    </div>
+  </body>
+</html>

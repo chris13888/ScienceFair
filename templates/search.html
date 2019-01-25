@@ -1,0 +1,21 @@
+<html>
+  <head>
+    <meta charset='UTF-8'>
+    <link rel='stylesheet' href='{{ url_for("static",filename="styles/styles.css") }}'>
+    <script type='text/javascript' src='{{ url_for("static",filename="js/jquery.js") }}'></script>
+    <script type='text/javascript' src='{{ url_for("static",filename="js/script.js") }}'></script>
+  </head>
+  <body>
+    <div id = 'toparea'>
+      <!-- <img src='{{ url_for("static",filename="images/logodark.png") }}' id = 'logo'> -->
+    </div>
+    <div id='bottomarea'>
+      <center id='content' class='in'>
+        <form action='{{ url_for("show_results") }}' method = 'POST'>
+          <input class='input i' name='query' id='searchbar'/>
+          <input type='submit' class='button' id='searchbutton'/>
+        </form>
+      </center>
+    </div>
+  </body>
+</html>

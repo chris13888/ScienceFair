@@ -1,0 +1,27 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link rel='stylesheet' href='{{ url_for("static",filename="styles/styles.css") }}'>
+    <script type='text/javascript' src='{{ url_for("static",filename="js/jquery.js") }}'></script>
+    <script type='text/javascript' src='{{ url_for("static",filename="js/script.js") }}'></script>
+    <script>
+      $(function(){
+        $('#content').load('/secretrequest', function(){
+          $('#animation').fadeOut(1000, function(){
+            $('#content').fadeIn(1000);
+          });
+        })
+      })
+    </script>
+  </head>
+  <body>
+    <div id = 'toparea'>
+      <!-- <img src='{{ url_for("static",filename="images/logodark.png") }}' id = 'logo'> -->
+    </div>
+    <div id='bottomarea'>
+      <div id='content' style='display: none;'>
+      </div>
+      <div id='animation'>loading...</div>
+    </div>
+  </body>
+</html>
